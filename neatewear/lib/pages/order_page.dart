@@ -12,7 +12,7 @@ class _OrderPageState extends State<OrderPage> {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'OrderPAge'
+        'LaundryPage'
       ),
     );
   }

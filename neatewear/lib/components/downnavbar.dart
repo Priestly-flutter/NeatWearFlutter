@@ -10,6 +10,7 @@ class FirstButton extends StatelessWidget {
     return Container(
         padding: EdgeInsets.symmetric(vertical: 20),
         child: GNav(
+          gap: 8,
           color: Colors.grey[400],
           activeColor: Colors.grey.shade700,
           tabActiveBorder: Border.all(color: Colors.white),
@@ -21,14 +22,17 @@ class FirstButton extends StatelessWidget {
             GButton(
               icon: Icons.home,
               text: 'Home',
+              hoverColor: Colors.blueGrey,
             ),
             GButton(
               icon: Icons.local_laundry_service_outlined,
-              text: 'Order',
+              text: 'Luandry',
+              hoverColor: Colors.blueGrey,
             ),
             GButton(
               icon: Icons.qr_code_scanner_outlined,
               text: 'Scan',
+              hoverColor: Colors.blueGrey,
             )
           ],
         ));

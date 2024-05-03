@@ -21,7 +21,7 @@ class landing_page extends StatelessWidget {
               Text(
                 'CLEAN',
                 style: GoogleFonts.joan(
-                  textStyle: TextStyle(
+                  textStyle:  const TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       letterSpacing: .9,
                       fontSize: 80.0),
