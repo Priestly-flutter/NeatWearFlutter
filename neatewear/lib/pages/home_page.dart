@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,27 +12,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white12,
-          leading: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Text(
-              'Home',
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: Color.fromARGB(235, 0, 0, 0),
-                  letterSpacing: .9,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
+        // search bar
+        Container(
+          padding: const EdgeInsets.all(15),
+          margin: const EdgeInsets.symmetric(horizontal: 25),
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(13),
           ),
-          leadingWidth: 100,
-        ),
-        Text(
-          'HomePage',
-        ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Search Service',
+                style: TextStyle(color: Colors.grey),
+              ),
+              Icon(
+                Icons.search,
+                color: Colors.grey,
+              ),
+            ],
+          ),
+        )
+        // will be divided into 2 main sections,which will reflect data from 2
+        // other sections
+        // section 1 will be made up of ( simply a laundry track demo)
+        // Your Orders ( displayed as a navbar, since since at the other end we'll)
+        // have a view all button
+
+        // section 2 will be made of a Services button, to demonstrate various
+        // stats of various service providers
       ],
     );
   }
