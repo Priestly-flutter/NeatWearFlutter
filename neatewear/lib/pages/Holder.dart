@@ -56,7 +56,7 @@ class _HolderState extends State<Holder> {
               padding: EdgeInsets.only(left: 12.0),
               child: Icon(
                 // look for an alternative to this by next commit
-                Icons.settings_applications_sharp,
+                Icons.menu,
                 color: Colors.blueGrey,
                 size: 30,
               ),
