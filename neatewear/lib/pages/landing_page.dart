@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:neatewear/pages/Holder.dart';
+import 'package:neatewear/pages/LoginPage.dart';
 
 class landing_page extends StatefulWidget {
   const landing_page({super.key});
@@ -34,7 +35,7 @@ class _landing_pageState extends State<landing_page> {
   void _navigateToLoginPage() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => LoginPage()),
+      MaterialPageRoute(builder: (context) => LogInForm()),
     );
   }
 

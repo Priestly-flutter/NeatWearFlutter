@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.symmetric(horizontal: 25),
           decoration: BoxDecoration(
-            color: Colors.white[200],
+            color: Colors.white,
             borderRadius: BorderRadius.circular(20),
           ),
           child: const Row(
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
           child: Divider(
             color: Colors.white,
           ),
-        )
+        ),
 
         // section 2 will be made of a Services button, to demonstrate various
         // stats of various service providers

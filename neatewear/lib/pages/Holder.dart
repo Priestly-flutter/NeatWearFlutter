@@ -17,7 +17,7 @@ class _HolderState extends State<Holder> {
 
   // TextEditingController searchbarController = TextEditingController();
 
-  // this method will update the valu of our selected index
+  // this method will update the value of our selected index
   // when the user taps on hte bottom bar
   // 0 for the home
   // 1 for the order
