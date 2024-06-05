@@ -44,7 +44,7 @@ class _OrderPageState extends State<OrderPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Your Clothes',
+                'Your Laundry',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,

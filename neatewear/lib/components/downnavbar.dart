@@ -11,10 +11,10 @@ class FirstButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20),
         child: GNav(
           gap: 8,
-          color: Colors.grey[400],
-          activeColor: Colors.grey.shade700,
+          color: Color.fromARGB(255, 189, 189, 189),
+          activeColor: Colors.white,
           tabActiveBorder: Border.all(color: Colors.white),
-          tabBackgroundColor: Colors.grey.shade100,
+          tabBackgroundColor: Color.fromARGB(255, 230, 138, 2),
           mainAxisAlignment: MainAxisAlignment.center,
           //tabBorderRadius: 5,
           onTabChange: (value) => onTabChange!(value),

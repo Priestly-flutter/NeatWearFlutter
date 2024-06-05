@@ -15,7 +15,7 @@ class _landing_pageState extends State<landing_page> {
 
   void _checkCookieCode() {
     // Simulated process of checking for the cookie code
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 100), () {
       // Assuming the cookie code is found
       bool isNewUser = false; // Set to true if the user is new
 
@@ -55,7 +55,7 @@ class _landing_pageState extends State<landing_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Color.fromARGB(221, 253, 154, 6),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(50),
@@ -69,9 +69,10 @@ class _landing_pageState extends State<landing_page> {
                 'NeatWear',
                 style: GoogleFonts.joan(
                   textStyle: const TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      letterSpacing: .9,
-                      fontSize: 80.0),
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    letterSpacing: .9,
+                    fontSize: 50.0,
+                  ),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -80,19 +81,42 @@ class _landing_pageState extends State<landing_page> {
               // this will be rapped in an IF statement, cause it has to be shown
               // only once, that is when the user opens the app for the first time
               // or also when their location has change
+              const Text(
+                'Keep It Clean',
+                style: TextStyle(
+                    color: Color.fromRGBO(255, 236, 179, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+
               Text(
-                'Are we available in you location ? \n Let us know your city or zip code!',
+                'Are we available in you location ?',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(color: Colors.grey[300]),
                 ),
                 textAlign: TextAlign.center,
               ),
+              Text(
+                'Let us know your city or zip code!',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(color: Colors.grey[300]),
+                ),
+                textAlign: TextAlign.center,
+              ),
+             
 
               // circular progress bar, to keep the user a bit busy while the app runs some background functions
               // the circular progress babr on reaching the complter state willl navigate to the HolderPage where it will display the home
 
-              CircularProgressIndicator(
-                value: _progress,
+              
+              SizedBox(
+
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(
+                    value: _progress,
+                  ),
+                ),
               )
 
               // button to continue to app, two dots, one active for this page,

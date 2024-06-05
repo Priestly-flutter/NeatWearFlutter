@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         // a container class that will grow as the number of elemenets in it grow,
         // the first line has an leading of Laundry and action of veiw all with color blue
 
-         const Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,19 +57,16 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 24,
                 ),
               ),
-              
-              Text(
-                'See all',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                )
-              ),
+              Text('See all',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  )),
             ],
           ),
         ),
         // creating an expanded list view
-        
+
         // start by defining the SizedBox-height
         const SizedBox(height: 10),
 
@@ -77,11 +74,15 @@ class _HomePageState extends State<HomePage> {
           child: ListView.builder(
             itemCount: 4,
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index){
+            itemBuilder: (context, index) {
               // indexes the result from the server, getting thw number of orders the client made
-              Order order = Order(name: name, price: price, status: status, imagePath: imagePath);
+              Order order = Order(
+                  name: name,
+                  price: price,
+                  status: status,
+                  imagePath: imagePath);
               return OrderTile(
-                order: order ,
+                order: order,
               );
             },
           ),
@@ -90,7 +91,7 @@ class _HomePageState extends State<HomePage> {
         // quick diver to give us some space between the two components
 
         const Padding(
-          padding: EdgeInsets.only(top:25.0, left: 25.0, right: 25.0),
+          padding: EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
           child: Divider(
             color: Colors.white,
           ),
@@ -103,20 +104,14 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Services',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                )
-              ),
-              Text(
-                'see all',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue
-                )
-              )
+              Text('Services',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  )),
+              Text('see all',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.blue))
             ],
           ),
         )
