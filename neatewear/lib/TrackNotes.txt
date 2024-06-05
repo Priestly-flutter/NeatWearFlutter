@@ -1,1 +1,2 @@
-Today i work on the scan page
+Today i work on the scan page -> Done
+Today i work on the order_page 
