@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:neatewear/pages/Holder.dart';
 import 'package:neatewear/pages/LoginPage.dart';
+import 'package:http/http.dart' as http;
+import 'package:percent_indicator/percent_indicator.dart';
+
 
 class landing_page extends StatefulWidget {
   const landing_page({super.key});
@@ -11,11 +14,33 @@ class landing_page extends StatefulWidget {
 }
 
 class _landing_pageState extends State<landing_page> {
+  // TODO: change progress bar to percentage bar for better UI and manipulation
+  // TODO: create the signup.dart page and attach here
+
   double _progress = 0.0; // progress variable for the circular progress bar
 
+  // ! This function will be studied later on this application development process
+  Future<bool> connectToAPI() async {
+  try {
+    final response = await http.get(Uri.parse('Backend_API_ENDPOINT'));
+    if (response.statusCode == 200) {
+      // API call successful
+      return true;
+    } else {
+      // API call failed
+      print('API Error: ${response.statusCode}');
+      return false;
+    }
+  } catch (e) {
+    print('API Connection Error: $e');
+    return false;
+  }
+}
+
+// Editing this to work togethere with our API
   void _checkCookieCode() {
     // Simulated process of checking for the cookie code
-    Future.delayed(Duration(seconds: 100), () {
+    Future.delayed(Duration(seconds: 40), () {
       // Assuming the cookie code is found
       bool isNewUser = false; // Set to true if the user is new
 
@@ -27,7 +52,7 @@ class _landing_pageState extends State<landing_page> {
       if (isNewUser) {
         _navigateToLoginPage(); // Navigate to the login page for new users
       } else {
-        _navigateToHolder(); // Navigate to the holder page for returning users
+        //_navigateToHolder(); // Navigate to the holder page for returning users
       }
     });
   }
@@ -39,12 +64,12 @@ class _landing_pageState extends State<landing_page> {
     );
   }
 
-  void _navigateToHolder() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Holder()),
-    );
-  }
+  // void _navigateToHolder() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => Holder()),
+  //   );
+  // }
 
   @override
   void initState() {
@@ -62,9 +87,7 @@ class _landing_pageState extends State<landing_page> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // logo at center
-
-              // text below logo
+              // text 
               Text(
                 'NeatWear',
                 style: GoogleFonts.joan(
@@ -78,9 +101,6 @@ class _landing_pageState extends State<landing_page> {
               ),
 
               // text to user
-              // this will be rapped in an IF statement, cause it has to be shown
-              // only once, that is when the user opens the app for the first time
-              // or also when their location has change
               const Text(
                 'Keep It Clean',
                 style: TextStyle(
@@ -88,64 +108,24 @@ class _landing_pageState extends State<landing_page> {
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-
-              Text(
-                'Are we available in you location ?',
-                style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Colors.grey[300]),
-                ),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                'Let us know your city or zip code!',
-                style: GoogleFonts.poppins(
-                  textStyle: TextStyle(color: Colors.grey[300]),
-                ),
-                textAlign: TextAlign.center,
-              ),
-             
-
-              // circular progress bar, to keep the user a bit busy while the app runs some background functions
-              // the circular progress babr on reaching the complter state willl navigate to the HolderPage where it will display the home
-
-              
+              // lineat progress bar, to keep the user a bit busy while the app runs some background functions
+              // the circular progress bar on reaching the complter state willl navigate to the HolderPage where it will display the home
               SizedBox(
-
+                width: 250, // Adjust the width as needed
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: CircularProgressIndicator(
-                    value: _progress,
+                  child: LinearPercentIndicator(
+                    // ! fix this and properly set the weight 
+                    width: 228.0, 
+                    lineHeight: 8.0,
+                    percent: _progress,
+                    linearStrokeCap: LinearStrokeCap.roundAll,
+                    progressColor: Colors.amber,
+                    backgroundColor: Colors.grey[300],
+                    center: Text(''), // Hide the percentage value
                   ),
                 ),
-              )
-
-              // button to continue to app, two dots, one active for this page,
-              // the other will take the user to the page where they can create
-              // their accounts
-              // GestureDetector(
-              //   onTap: () => Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => HomePage(),
-              //       )),
-              //   child: Container(
-              //     // ignore: prefer_const_constructors
-              //     decoration: BoxDecoration(
-              //       color: Color.fromRGBO(21, 90, 78, 1),
-              //       borderRadius: BorderRadius.circular(12),
-              //     ),
-              //     padding: const EdgeInsets.all(25),
-              //     child: const Center(
-              //       child: Text(
-              //         'Keep It Clean',
-              //         style: TextStyle(
-              //             color: Color.fromRGBO(255, 236, 179, 1),
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 20),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              ),
             ],
           ),
         ),

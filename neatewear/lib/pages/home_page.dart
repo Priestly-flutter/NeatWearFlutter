@@ -70,23 +70,23 @@ class _HomePageState extends State<HomePage> {
         // start by defining the SizedBox-height
         const SizedBox(height: 10),
 
-        Expanded(
-          child: ListView.builder(
-            itemCount: 4,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              // indexes the result from the server, getting thw number of orders the client made
-              Order order = Order(
-                  name: name,
-                  price: price,
-                  status: status,
-                  imagePath: imagePath);
-              return OrderTile(
-                order: order,
-              );
-            },
-          ),
-        ),
+        // Expanded(
+        //   child: ListView.builder(
+        //     itemCount: 4,
+        //     scrollDirection: Axis.horizontal,
+        //     itemBuilder: (context, index) {
+        //       // indexes the result from the server, getting thw number of orders the client made
+        //       Order order = Order(
+        //           name: name,
+        //           price: price,
+        //           status: status,
+        //           imagePath: imagePath);
+        //       return OrderTile(
+        //         order: order,
+        //       );
+        //     },
+        //   ),
+        // ),
 
         // quick diver to give us some space between the two components
 
