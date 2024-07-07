@@ -1,2 +1,6 @@
 Today i work on the scan page -> Done
 Today i work on the order_page 
+
+
+
+CHATGPT API KEY: sk-proj-QBWNwt5zjnywKRstoFylT3BlbkFJsPvJfsN8qmnNhver4meD
