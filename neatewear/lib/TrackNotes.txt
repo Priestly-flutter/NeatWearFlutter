@@ -7,4 +7,4 @@ Hi I'm Priestly , coding neatewear app and training AI to help in the laundry pr
 Don't mind my API key below, i'll change it 😎😎😎😉
 
 
-CHATGPT API KEY: sk-proj-QBWNwt5zjnywKRstoFylT3BlbkFJsPvJfsN8qmnNhver4meD
+CHATGPT API KEY: 
